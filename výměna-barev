@@ -1,0 +1,15 @@
+import cv2
+
+# načtení obrázku z počítače
+imag = cv2.imread(r"C:\Users\HP 255 G7\Pictures\waterfall.webp", 1)
+
+# rozdělení barev obrázku na pole blue, green, red. OpenCV používá BGR místo RGB.
+blu, gre, red = cv2.split(imag)
+
+# spojí 3 pole s hodnotama barev v jiném pořadí než původní obrázek
+imag = cv2.merge((red, blu, gre))
+
+# zobrazí okno s obrázkem
+cv2.imshow("Test", imag)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
