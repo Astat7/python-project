@@ -1,0 +1,15 @@
+import cv2
+
+# načtení obrázku z počítače
+imag = cv2.imread(r"C:\Users\HP 255 G7\Pictures\moon.jpg", 1)
+
+# obrázek se trochu rozmaže aby se detaily nepočítaly jako kraje
+imag = cv2.blur(imag, (5, 5))
+
+# použije funkci Canny k nalezení krajů v obrázku a uloží je do imag
+imag = cv2.Canny(imag, 60, 60)
+
+# zobrazí okno s obrázkem
+cv2.imshow("Test", imag)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
