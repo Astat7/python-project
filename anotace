@@ -1,0 +1,12 @@
+import cv2
+
+# načtení obrázku z počítače jako pole s hodnoty reprezentující barvy v každém pixelu
+imag = cv2.imread(r"C:\Users\HP 255 G7\Pictures\waterfall.webp", 1)
+
+# vytvoření červerého kroužku na obrázku na pozici 900 : 150
+imag = cv2.circle(imag, (900, 150), 30, (0, 0, 255), thickness=5)
+
+# zobrazí okno s obrázkem
+cv2.imshow("Test", imag)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
